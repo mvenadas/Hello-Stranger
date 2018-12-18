@@ -1,0 +1,117 @@
+#home {
+  background-color: $black;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  .container {
+    padding-bottom: 250px;
+  }
+
+  .mosaic {
+    position: relative;
+    top: -260px;
+
+    .left {
+      img:nth-child(1) {
+        width: 50%;
+        height: auto;
+        position: relative;
+        left: 130px;
+      }
+
+      img:nth-child(2) {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 100px;
+        left: -50px;
+      }
+
+      img:nth-child(3) {
+        width: 50%;
+        height: auto;
+        position: relative;
+        top: 200px;
+        left: 100px;
+      }
+
+      img:nth-child(4) {
+        width: 50%;
+        height: auto;
+        position: relative;
+        top: 275px;
+        left: 250px;
+      }
+
+      img:nth-child(5) {
+        width: 50%;
+        height: auto;
+        position: relative;
+        top: 350px;
+        left: 80px;
+      }
+    }
+
+    .right {
+      img:nth-child(1) {
+        width: 75%;
+        height: auto;
+        position: relative;
+        top: 200px;
+        right: -190px;
+      }
+
+      img:nth-child(2) {
+        width: 50%;
+        height: auto;
+        position: relative;
+        top: 350px;
+        right: -50px;
+      }
+
+      img:nth-child(3) {
+        width: 90%;
+        height: auto;
+        position: relative;
+        top: 480px;
+        right: -125px;
+      }
+
+      img:nth-child(4) {
+        width: 10%;
+        height: auto;
+        position: relative;
+        top: 650px;
+        right: -310px;
+      }
+
+      img:nth-child(5) {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 750px;
+        right: 80px;
+      }
+
+    }
+  }
+
+  header {
+    .logo {
+      background: url(../img/hs-logo-w.svg);
+      background-size: 75%;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      position: relative;
+      z-index: 9;
+    }
+
+    .face {
+      background: url(../img/face-w.svg);
+      background-size: 70%;
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
+  }
+}

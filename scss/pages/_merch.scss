@@ -1,0 +1,24 @@
+#merch {
+  background-color: $yellowish;
+
+  .container {
+    p {
+      color: $black;
+      padding: 25px 0;
+      width: 100%;
+      height: auto;
+      text-align: center;
+    }
+
+    .row {
+      .copy {
+        text-align: center;
+
+        h5 {
+          color: $black;
+          padding-bottom: 15px
+        }
+      }
+    }
+  }
+}

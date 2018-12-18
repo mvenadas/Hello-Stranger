@@ -1,0 +1,643 @@
+*, body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: white;
+  position: relative;
+}
+
+p {
+  font-family: Didact Gothic, sans-serif;
+}
+
+.row {
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+}
+
+@font-face {
+  font-family: 'nemek_gothicblack';
+  src: url("../fonts/nemek_gothic-webfont.woff2") format("woff2"), url("../fonts/nemek_gothic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.lower {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.lower label {
+  font-family: 'nemek_gothicblack';
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9;
+}
+
+.overlay label {
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: url("https://tympanus.net/Development/FullscreenOverlayStyles/img/cross.png");
+  z-index: 100;
+  cursor: pointer;
+}
+
+.overlay .nav {
+  text-align: center;
+  position: relative;
+  top: 45%;
+  height: 60%;
+  font-size: 54px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.overlay ul li {
+  background-color: transparent;
+  display: block;
+  height: 20%;
+  height: calc(100% / 5);
+  min-height: 54px;
+}
+
+.overlay ul li a {
+  font-family: 'nemek_gothicblack';
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: white;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+  color: silver;
+}
+
+.lower ~ .overlay-hugeinc {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+#op:checked ~ .overlay-hugeinc {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.overlay-hugeinc .nav {
+  -moz-perspective: 300px;
+}
+
+.overlay-hugeinc .nav ul {
+  opacity: 0.4;
+  -webkit-transform: translateY(-25%) rotateX(35deg);
+  transform: translateY(-25%) rotateX(35deg);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+#op:checked ~ .overlay-hugeinc .nav ul {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+#op:not(:checked) ~ .overlay-hugeinc .nav ul {
+  -webkit-transform: translateY(25%) rotateX(-35deg);
+  transform: translateY(25%) rotateX(-35deg);
+}
+
+header {
+  display: flex;
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+}
+
+header div {
+  flex: 1;
+}
+
+#page-title {
+  width: 200px;
+  height: 23px;
+  position: fixed;
+  z-index: 9999;
+  right: -75px;
+  top: 50%;
+  bottom: 50%;
+  display: flex;
+  border-bottom: solid 1px white;
+  text-align: center;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+#page-title div:nth-child(1) {
+  flex: 1;
+  color: white;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#page-title div:nth-child(2) {
+  flex: 1;
+  color: white;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+#page-title-inside {
+  width: 200px;
+  height: 23px;
+  position: fixed;
+  z-index: 9999;
+  right: -75px;
+  top: 50%;
+  bottom: 50%;
+  display: flex;
+  border-bottom: solid 1px black;
+  text-align: center;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+#page-title-inside div:nth-child(1) {
+  flex: 1;
+  color: black;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#page-title-inside div:nth-child(2) {
+  flex: 1;
+  color: black;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+#rose-block {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 8;
+  bottom: 25px;
+  right: 50px;
+}
+
+#rose-block img {
+  width: 100px;
+  height: 100px;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  position: relative;
+  bottom: 0;
+  text-align: left;
+  padding: 50px 0;
+}
+
+footer .container {
+  width: 90%;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer div:nth-child(1) span {
+  background: url(../img/hs-logo-w.svg);
+  background-size: 75%;
+  background-repeat: no-repeat;
+  display: block;
+  width: 195px;
+  height: 115px;
+}
+
+footer div:nth-child(2) {
+  margin: 45px 0 0 0;
+}
+
+footer div:nth-child(3) {
+  margin: 62px 0 0 0;
+}
+
+footer div:nth-child(3) li {
+  display: inline-block;
+}
+
+footer div:nth-child(3) img {
+  width: 30px;
+  height: 30px;
+}
+
+footer .logo img {
+  width: 100%;
+  max-width: 142px;
+  height: auto;
+}
+
+footer .social li {
+  margin-right: 10px;
+}
+
+#inside {
+  position: relative;
+  overflow: hidden;
+}
+
+#inside label {
+  color: black;
+}
+
+#inside header {
+  position: relative;
+  z-index: 9;
+}
+
+#inside header .logo span {
+  background: url(../img/hs-logo-b.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  display: block;
+  width: 100%;
+  height: 380px;
+}
+
+#inside header .face {
+  background: url(../img/face-b.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+#inside #rose-block {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 9;
+  bottom: 25px;
+  right: 50px;
+}
+
+#inside #rose-block img {
+  width: 100px;
+  height: 100px;
+}
+
+#inside footer {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  position: relative;
+  bottom: 0;
+  text-align: left;
+  padding: 50px 0;
+}
+
+#inside footer .container {
+  width: 90%;
+}
+
+#inside footer ul {
+  list-style-type: none;
+}
+
+#inside footer div:nth-child(1) span {
+  background: url(../img/hs-logo-b.svg);
+  background-size: 75%;
+  background-repeat: no-repeat;
+  display: block;
+  width: 195px;
+  height: 115px;
+}
+
+#inside footer div:nth-child(2) {
+  margin: 45px 0 0 0;
+}
+
+#inside footer div:nth-child(2) li {
+  color: black;
+}
+
+#inside footer div:nth-child(3) {
+  margin: 62px 0 0 0;
+}
+
+#inside footer div:nth-child(3) li {
+  display: inline-block;
+}
+
+#inside footer div:nth-child(3) img {
+  width: 30px;
+  height: 30px;
+}
+
+#inside footer .logo img {
+  width: 100%;
+  max-width: 142px;
+  height: auto;
+}
+
+#inside footer .social li {
+  margin-right: 10px;
+}
+
+#home {
+  background-color: black;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+#home .container {
+  padding-bottom: 250px;
+}
+
+#home .mosaic {
+  position: relative;
+  top: -260px;
+}
+
+#home .mosaic .left img:nth-child(1) {
+  width: 50%;
+  height: auto;
+  position: relative;
+  left: 130px;
+}
+
+#home .mosaic .left img:nth-child(2) {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 100px;
+  left: -50px;
+}
+
+#home .mosaic .left img:nth-child(3) {
+  width: 50%;
+  height: auto;
+  position: relative;
+  top: 200px;
+  left: 100px;
+}
+
+#home .mosaic .left img:nth-child(4) {
+  width: 50%;
+  height: auto;
+  position: relative;
+  top: 275px;
+  left: 250px;
+}
+
+#home .mosaic .left img:nth-child(5) {
+  width: 50%;
+  height: auto;
+  position: relative;
+  top: 350px;
+  left: 80px;
+}
+
+#home .mosaic .right img:nth-child(1) {
+  width: 75%;
+  height: auto;
+  position: relative;
+  top: 200px;
+  right: -190px;
+}
+
+#home .mosaic .right img:nth-child(2) {
+  width: 50%;
+  height: auto;
+  position: relative;
+  top: 350px;
+  right: -50px;
+}
+
+#home .mosaic .right img:nth-child(3) {
+  width: 90%;
+  height: auto;
+  position: relative;
+  top: 480px;
+  right: -125px;
+}
+
+#home .mosaic .right img:nth-child(4) {
+  width: 10%;
+  height: auto;
+  position: relative;
+  top: 650px;
+  right: -310px;
+}
+
+#home .mosaic .right img:nth-child(5) {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 750px;
+  right: 80px;
+}
+
+#home header .logo {
+  background: url(../img/hs-logo-w.svg);
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: relative;
+  z-index: 9;
+}
+
+#home header .face {
+  background: url(../img/face-w.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+#about {
+  background-color: #b9634c;
+}
+
+#about .container img {
+  width: 45%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#about .container .row .copy {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#about .container .row .copy p {
+  color: black;
+  padding-bottom: 25px;
+}
+
+#about .cross img {
+  width: 65px;
+  height: 65px;
+  display: block;
+  margin-top: 50px;
+}
+
+#location {
+  background-color: #f8ead0;
+}
+
+#location .container .row .copy {
+  text-align: center;
+}
+
+#location .container .row .copy h5 {
+  color: black;
+}
+
+#location .container .row .copy p {
+  color: black;
+  padding-bottom: 25px;
+}
+
+#location .container .row .copy img {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  margin-top: 25px;
+}
+
+#location .container .copy-container {
+  position: relative;
+  top: -50px;
+}
+
+#location .container .mosaic {
+  position: relative;
+  top: -160px;
+}
+
+#location .container .mosaic .left img:nth-child(1) {
+  width: 56%;
+  height: auto;
+  position: relative;
+  left: 105px;
+  top: 45px;
+}
+
+#location .container .mosaic .left img:nth-child(2) {
+  width: 10%;
+  height: auto;
+  position: relative;
+  left: -100px;
+  top: 265px;
+}
+
+#location .container .mosaic .right img:nth-child(1) {
+  width: 90%;
+  height: auto;
+  position: relative;
+  left: -75px;
+  top: 100px;
+}
+
+#location .img-low img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+#events {
+  background-color: #92b7a2;
+}
+
+#events .container p {
+  color: black;
+  padding: 25px 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+#events .container .row .copy {
+  text-align: center;
+}
+
+#events .container .row .copy h5 {
+  color: black;
+  padding-bottom: 15px;
+}
+
+#merch {
+  background-color: #f2db80;
+}
+
+#merch .container p {
+  color: black;
+  padding: 25px 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+#merch .container .row .copy {
+  text-align: center;
+}
+
+#merch .container .row .copy h5 {
+  color: black;
+  padding-bottom: 15px;
+}

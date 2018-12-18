@@ -1,0 +1,153 @@
+
+// Header
+header {
+  display: flex;
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+
+  div {
+    flex: 1;
+  }
+}
+
+// Global Page Title
+#page-title {
+  width: 200px;
+  height: 23px;
+  position: fixed;
+  z-index: 9999;
+  right: -75px;
+  top: 50%;
+  bottom: 50%;
+  display: flex;
+  border-bottom: solid 1px $white;
+  text-align: center;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
+  div:nth-child(1) {
+    flex: 1;
+    color: $white;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  div:nth-child(2) {
+    flex: 1;
+    color: $white;
+    text-align: right;
+    text-transform: uppercase;
+  }
+}
+
+#page-title-inside {
+  width: 200px;
+  height: 23px;
+  position: fixed;
+  z-index: 9999;
+  right: -75px;
+  top: 50%;
+  bottom: 50%;
+  display: flex;
+  border-bottom: solid 1px $black;
+  text-align: center;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
+  div:nth-child(1) {
+    flex: 1;
+    color: $black;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  div:nth-child(2) {
+    flex: 1;
+    color: $black;
+    text-align: right;
+    text-transform: uppercase;
+  }
+}
+
+#rose-block {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 8;
+  bottom: 25px;
+  right: 50px;
+
+  img  {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+// Footer
+footer {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  position: relative;
+  bottom: 0;
+  text-align: left;
+  padding: 50px 0;
+
+
+  .container {
+    width: 90%;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  div:nth-child(1) {
+    span {
+      background: url(../img/hs-logo-w.svg);
+      background-size: 75%;
+      background-repeat: no-repeat;
+      display: block;
+      width: 195px;
+      height: 115px;
+    }
+  }
+
+  div:nth-child(2) {
+    margin: 45px 0 0 0;
+  }
+
+  div:nth-child(3) {
+    margin: 62px 0 0 0;
+
+    li {
+      display: inline-block;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .logo {
+    img {
+      width: 100%;
+      max-width: 142px;
+      height: auto;
+    }
+  }
+
+  .social {
+    li {
+      margin-right: 10px;
+    }
+  }
+}

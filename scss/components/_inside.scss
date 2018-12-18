@@ -1,0 +1,110 @@
+#inside {
+  position: relative;
+  overflow: hidden;
+
+  label {
+    color: $black;
+  }
+
+  header {
+    position: relative;
+    z-index: 9;
+
+    .logo {
+      span {
+        background: url(../img/hs-logo-b.svg);
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        display: block;
+        width: 100%;
+        height: 380px;
+      }
+    }
+
+    .face {
+      background: url(../img/face-b.svg);
+      background-size: 70%;
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
+  }
+
+  #rose-block {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 9;
+    bottom: 25px;
+    right: 50px;
+
+    img  {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  footer {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    position: relative;
+    bottom: 0;
+    text-align: left;
+    padding: 50px 0;
+
+    .container {
+      width: 90%;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    div:nth-child(1) {
+      span {
+        background: url(../img/hs-logo-b.svg);
+        background-size: 75%;
+        background-repeat: no-repeat;
+        display: block;
+        width: 195px;
+        height: 115px;
+      }
+    }
+
+    div:nth-child(2) {
+      margin: 45px 0 0 0;
+
+      li {
+        color: $black;
+      }
+    }
+
+    div:nth-child(3) {
+      margin: 62px 0 0 0;
+
+      li {
+        display: inline-block;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .logo {
+      img {
+        width: 100%;
+        max-width: 142px;
+        height: auto;
+      }
+    }
+
+    .social {
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
+}

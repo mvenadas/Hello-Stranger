@@ -1,0 +1,19 @@
+* , body {
+  margin: 0;
+  padding: 0;
+  background-color: $trans;
+  color: $white;
+  position: relative;
+}
+
+p {
+  font-family: $primary-font;
+}
+
+.row {
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+}
